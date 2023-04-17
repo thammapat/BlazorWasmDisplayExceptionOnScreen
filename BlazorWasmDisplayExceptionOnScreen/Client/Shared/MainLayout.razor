@@ -1,0 +1,43 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            <CustomErrBoundary @ref="@errorBoundary">
+                <ChildContent>
+                    @Body
+                </ChildContent>
+                <ErrorContent Context="Exception">
+                    <div class="alert alert-primary">
+                        <b>Unhandled exception has occurred.</b><br />
+                        <b>Source: </b>@Exception.Source <br />
+                        <b>Type: </b>@Exception.GetType()<br>
+                        <b>Message: </b>@Exception.Message<br>
+                        <b>StackTrace: </b>@Exception.StackTrace<br /><br />
+                        <button class="btn btn-success" @onclick="() => errorBoundary.Recover()">Resume</button>
+                    </div>
+                </ErrorContent>
+            </CustomErrBoundary>
+        </article>
+    </main>
+</div>
+
+@code
+{
+    CustomErrBoundary? errorBoundary;
+
+    protected override void OnInitialized()
+    {
+        this.errorBoundary = new();
+    }
+
+
+}
