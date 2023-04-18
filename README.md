@@ -4,3 +4,5 @@ Usually when an error occurs We'll have to look at the console but in the follow
 <img src="https://github.com/thammapat/BlazorWasmDisplayExceptionOnScreen/blob/master/BlazorWasmDisplayExceptionOnScreen/Client/Screenshot.jpg" />
 <br /><br />
 Please see the <a href="https://github.com/thammapat/BlazorWasmDisplayExceptionOnScreen/blob/master/BlazorWasmDisplayExceptionOnScreen/Client/Shared/MainLayout.razor" target="_blank">MainLayout.razor</a> and apply to your project.
+<br /><br />
+<b>Credit: </b>this project base on <a href="https://github.com/DavidEggenberger/DavidSeesSharp-Videos/tree/main/Blazor-GlobalExceptionHandling">Blazor-GlobalExceptionHandling</a>
